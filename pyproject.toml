@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "countersign"
+version = "0.1.0"
+description = "A maker-checker loop for AI coding agents: one agent builds, another countersigns on evidence."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Houssem Zaier" }]
+keywords = ["ai-agents", "code-review", "claude-code", "maker-checker", "llm"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX :: Linux",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.urls]
+Homepage = "https://github.com/houssemzaier/countersign"
+
+[project.scripts]
+countersign = "countersign.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+countersign = ["data/roles/*.md", "data/templates/*.md"]

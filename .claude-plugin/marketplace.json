@@ -1,0 +1,22 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "countersign",
+  "description": "countersign: a maker-checker loop for AI coding agents.",
+  "owner": {
+    "name": "Houssem Zaier",
+    "url": "https://github.com/houssemzaier"
+  },
+  "plugins": [
+    {
+      "name": "countersign",
+      "description": "A maker-checker loop for AI coding agents: another agent builds, Claude verifies on evidence and countersigns, you hold the gates.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Houssem Zaier"
+      },
+      "source": "./plugins/countersign",
+      "category": "development",
+      "homepage": "https://github.com/houssemzaier/countersign"
+    }
+  ]
+}

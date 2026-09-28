@@ -1,0 +1,13 @@
+{
+  "name": "countersign",
+  "version": "0.1.0",
+  "description": "A maker-checker loop for AI coding agents: another agent builds, Claude verifies on evidence and countersigns, you hold the gates.",
+  "author": {
+    "name": "Houssem Zaier",
+    "url": "https://github.com/houssemzaier"
+  },
+  "homepage": "https://github.com/houssemzaier/countersign",
+  "repository": "https://github.com/houssemzaier/countersign",
+  "license": "MIT",
+  "keywords": ["maker-checker", "code-review", "verification", "multi-agent", "acceptance-tests"]
+}
