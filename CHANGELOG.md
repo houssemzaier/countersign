@@ -3,6 +3,13 @@
 ## Unreleased
 
 - **The checker is the hub.** The maker writes only to the checker, and the CLI refuses anything else. A maker that needs the owner sends the checker a message with `--owner`, and the checker asks the owner and relays the answer with `approve`. See lesson 12.
+- **Small tickets, loud makers.** The maker card, the checker card and the `AGENTS.md` template now set the discipline:
+  - a ticket is one checkable result;
+  - the maker reports after two failed attempts, and sends a heartbeat at least every 30 minutes;
+  - no passive waits on timeouts, and no full reruns;
+  - the checker splits big tickets and chases a silent maker.
+
+  See lesson 13.
 
 ## 0.1.0 (2026-09-28)
 

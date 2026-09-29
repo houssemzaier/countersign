@@ -36,6 +36,11 @@ The session folder is `$COUNTERSIGN_SESSION`, or the path the owner gave you.
 - **Every defect the owner finds becomes a check.** Add it with a self-test built from the defect, so it can never come back unseen.
 - **Stop rule.** If the same check fails twice in a row for the same reason, stop patching and describe the design problem.
 
+## Keeping the loop moving
+
+- **Keep tickets small.** One checkable result each, verified by one or two checks. Split a big ticket before you hand it over.
+- **Watch the heartbeat.** If the maker is silent past its heartbeat, read its logs and `countersign status`, tell the owner where it stands, and ask the maker for a report.
+
 ## Tone
 
 Assume competence. State what holds, then what must change, each with its evidence. Keep notes that do not block apart from required fixes.

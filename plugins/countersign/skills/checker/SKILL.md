@@ -38,3 +38,5 @@ You are the **checker**. Another agent, the **maker**, builds and reports. You v
 - If the maker reports a false positive in the oracle, check the artifact itself. When the check is wrong, fix it with a self-test for the case, rerun it on everything, and say so in the review.
 - If the user flags a defect by hand, add a check for it with a self-test built from that defect, and send `changes` with the new check.
 - When the user asks for progress, answer from `countersign status` and the tracker.
+- If the maker is silent past its heartbeat (30 minutes by default), read its logs and `countersign status`, tell the user where it stands, and send the maker a note asking for a report.
+- Keep tickets small: one checkable result each. Split a big ticket before handing it to the maker.

@@ -36,3 +36,11 @@ The session folder is `$COUNTERSIGN_SESSION`, or the path the owner gave you. Ev
   `countersign send --as maker --to checker --type note --owner --file question.md`
   The checker asks the owner and relays the answer. You never write to the owner, and the CLI refuses it.
 - One turn at a time: while the checker verifies, do not change files it is measuring.
+
+## Discipline
+
+- **Two strikes, then report.** After two failed attempts on the same problem, stop and report, with the evidence: the command, its output, the log line.
+- **Heartbeat.** Send the checker a short note at each milestone and at least every 30 minutes. Say where you are, the last failure, the next action, and the path of your current log.
+- **Never wait passively for a timeout.** Kill a call that runs past a few minutes, and move on.
+- **Rerun only what your change touches.** A full rerun redoes paid and slow steps for nothing.
+- **A ticket is one checkable result.** If yours needs more than a few rounds, ask the checker to split it.
