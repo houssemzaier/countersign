@@ -144,6 +144,8 @@ def cmd_send(args):
         fail('a review needs --verdict accepted|changes|blocked')
     if args.type == 'report' and not args.ticket:
         fail('a report needs --ticket ID')
+    if args.as_ == 'maker' and args.to != 'checker':
+        fail('the maker writes only to the checker; to ask the owner, send to the checker with --owner')
     pings = []
     with Lock(ws):
         state = load_state(ws)

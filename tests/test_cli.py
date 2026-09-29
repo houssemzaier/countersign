@@ -46,6 +46,14 @@ class CountersignTest(unittest.TestCase):
         r = cs('wait', self.ws, '--as', 'maker', '--timeout', '1', '--poll', '0.1', check=False)
         self.assertEqual(r.returncode, 4, 'the maker does not receive its own message')
 
+    def test_the_maker_asks_the_owner_through_the_checker(self):
+        r = cs('send', self.ws, '--as', 'maker', '--to', 'owner', '--type', 'note', stdin='plan ready', check=False)
+        self.assertEqual(r.returncode, 2, 'the maker never writes to the owner directly')
+        cs('send', self.ws, '--as', 'maker', '--to', 'checker', '--type', 'note', '--owner', stdin='plan ready')
+        self.assertEqual(self.state()['status'], 'waiting_owner')
+        r = cs('wait', self.ws, '--as', 'checker', '--timeout', '2', '--poll', '0.1')
+        self.assertIn('plan ready', r.stdout, 'the checker sees the gate and relays it')
+
     def test_a_report_needs_a_ticket_and_a_review_a_verdict(self):
         r = cs('send', self.ws, '--as', 'maker', '--to', 'checker', '--type', 'report', stdin='x', check=False)
         self.assertEqual(r.returncode, 2)

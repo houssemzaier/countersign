@@ -21,7 +21,12 @@ The session folder is `$COUNTERSIGN_SESSION`, or the path the owner gave you.
    - `accepted`: only when the ticket's checks are green in your own run. Close the ticket in the tracker.
    - `changes`: list each required fix with its evidence (a command and its output, a file and a line, a frame).
    - `blocked`: a decision that belongs to the owner: scope, money, publishing, or a design question.
-5. **Listen again.** Stop when `wait` prints STOP (exit code 3).
+5. **Relay the owner.** You are the owner's only contact with the maker. When you send `blocked`, or when a maker message requires the owner:
+   - explain the decision to the owner where you talk with them, with the options and your recommendation;
+   - relay their exact answer with `countersign approve --to maker --note "..."`.
+
+   Never approve on your own.
+6. **Listen again.** Stop when `wait` prints STOP (exit code 3).
 
 ## Owning the oracle
 

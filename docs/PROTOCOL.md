@@ -61,6 +61,7 @@ verdict:
 - `state.json` records whose turn it is (`maker`, `checker`, `owner`, or `any` before the first message) and the session status (`running`, `waiting_owner`, `stopped`).
 - **Round limit.** Each report increments the ticket's round. The report past `--max-rounds` (4 by default) becomes an owner gate: the loop cannot run forever on one ticket.
 - **Owner gates.** A `blocked` review, a report past the round limit, or any message sent with `--owner` sets the turn to `owner`. `countersign approve` answers it.
+- **The checker is the hub.** The maker writes only to the checker; the CLI refuses anything else. When the maker needs the owner, it sends the checker a message with `--owner`. The checker asks the owner, then relays the owner's answer with `approve`.
 - **STOP.** `countersign stop` writes `STOP`. Every later `wait` exits with code 3, and every `send` is refused.
 
 ## Listening

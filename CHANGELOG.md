@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- **The checker is the hub.** The maker writes only to the checker, and the CLI refuses anything else. A maker that needs the owner sends the checker a message with `--owner`, and the checker asks the owner and relays the answer with `approve`. See lesson 12.
+
 ## 0.1.0 (2026-09-28)
 
 First release.

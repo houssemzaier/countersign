@@ -22,12 +22,13 @@ You are the **checker**. Another agent, the **maker**, builds and reports. You v
 3. When it exits:
    - **Exit 0, a message.** Read it.
      - A `ready` or a `note`: acknowledge it if useful, then listen again.
+     - Any message marked `requires_owner: true`: the maker needs the owner. Explain the decision to the user in the chat, with the options and your recommendation. Relay their exact answer with `countersign approve <session> --to maker --note "..."`, then listen again. Never approve on your own.
      - A `report`: verify it as your role card says, on evidence only. Run the oracle yourself; never trust a cached or reported result. Check `git show` for each commit, `git status` for uncommitted files, and the delivered artifact itself.
    - **Exit 3, STOP.** The owner ended the session. Tell the user, and stop.
 4. Write the review to a file in your scratch area, then send it: `countersign send <session> --as checker --to maker --type review --ticket <id> --verdict <accepted|changes|blocked> --file <review.md>`.
    - `accepted`: only when the ticket's checks are green in your own run. Close the ticket in the tracker the project uses (for example `gh issue close <id> --comment "..."`).
    - `changes`: each required fix, with its evidence.
-   - `blocked`: the owner must decide (scope, money, publishing, design).
+   - `blocked`: the owner must decide (scope, money, publishing, design). Ask the user in the chat, then relay their answer with `countersign approve`, as above.
 5. Tell the user the verdict in one sentence.
 6. Listen again (step 2).
 

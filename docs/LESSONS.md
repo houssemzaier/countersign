@@ -13,3 +13,4 @@ countersign was extracted from a real project: seven tickets and more than thirt
 9. **Your own oracle will be wrong.** The checker's check misread a fade-in as a broken line. Verify false positives on the artifact, fix the oracle with a self-test, and rerun it on everything.
 10. **Two sessions of the same owner can race.** Read `countersign status` and the latest messages before acting on a verdict you remember.
 11. **Round limits are kindness.** A ticket that takes more than four reports has a design problem, not an effort problem. Hand it to the owner.
+12. **The checker is the owner's only relay.** A maker sent a plan approval straight to the owner. The checker listened only for its own messages and never saw it, and the plan waited seven hours. The maker now writes only to the checker, and the CLI enforces it.

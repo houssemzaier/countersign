@@ -32,4 +32,7 @@ The session folder is `$COUNTERSIGN_SESSION`, or the path the owner gave you. Ev
 ## Limits
 
 - A ticket gets a few reports at most (the session's round limit). Past it, the ticket goes to the owner.
+- **Need the owner?** A decision in the middle of a ticket, such as a plan to approve or a scope question, goes to the checker as an owner gate:
+  `countersign send --as maker --to checker --type note --owner --file question.md`
+  The checker asks the owner and relays the answer. You never write to the owner, and the CLI refuses it.
 - One turn at a time: while the checker verifies, do not change files it is measuring.
